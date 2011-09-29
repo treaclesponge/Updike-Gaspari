@@ -1,0 +1,50 @@
+[21-Sep-2011 11:13:52] PHP Warning:  require_once(INC/meta.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/markweek/public_html/updikegaspari/index.php on line 16
+[21-Sep-2011 11:13:52] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required 'INC/meta.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/markweek/public_html/updikegaspari/index.php on line 16
+[21-Sep-2011 12:06:53] PHP Parse error:  syntax error, unexpected '<' in /home/markweek/public_html/updikegaspari/INC/header.php on line 7
+[23-Sep-2011 09:13:58] PHP Warning:  require_once(INC/scripts.html) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/markweek/public_html/updikegaspari/indexHASAN.php on line 8
+[23-Sep-2011 09:13:58] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required 'INC/scripts.html' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/markweek/public_html/updikegaspari/indexHASAN.php on line 8
+[23-Sep-2011 09:16:16] PHP Warning:  require_once(INC/db.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/markweek/public_html/updikegaspari/index.php on line 28
+[23-Sep-2011 09:16:16] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required 'INC/db.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/markweek/public_html/updikegaspari/index.php on line 28
+[23-Sep-2011 09:16:39] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'dbuser'@'localhost' (using password: YES) in /home/markweek/public_html/updikegaspari/INC/db.php on line 4
+[23-Sep-2011 09:17:46] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'markweek_updike'@'host60.secureserver777.com' (using password: YES) in /home/markweek/public_html/updikegaspari/INC/db.php on line 4
+[23-Sep-2011 09:18:03] PHP Warning:  opendir(images/newProperties/main/257) [<a href='function.opendir'>function.opendir</a>]: failed to open dir: No such file or directory in /home/markweek/public_html/updikegaspari/index.php on line 41
+[23-Sep-2011 09:18:03] PHP Warning:  readdir(): supplied argument is not a valid Directory resource in /home/markweek/public_html/updikegaspari/index.php on line 42
+[23-Sep-2011 09:18:03] PHP Warning:  sort() expects parameter 1 to be array, null given in /home/markweek/public_html/updikegaspari/index.php on line 47
+[23-Sep-2011 09:18:33] PHP Warning:  require_once(INC/scripts.html) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/markweek/public_html/updikegaspari/indexHASAN.php on line 8
+[23-Sep-2011 09:18:33] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required 'INC/scripts.html' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/markweek/public_html/updikegaspari/indexHASAN.php on line 8
+[23-Sep-2011 09:21:56] PHP Warning:  opendir(images/newProperties/main/257) [<a href='function.opendir'>function.opendir</a>]: failed to open dir: No such file or directory in /home/markweek/public_html/updikegaspari/index.php on line 41
+[23-Sep-2011 09:21:56] PHP Warning:  readdir(): supplied argument is not a valid Directory resource in /home/markweek/public_html/updikegaspari/index.php on line 42
+[23-Sep-2011 09:21:56] PHP Warning:  sort() expects parameter 1 to be array, null given in /home/markweek/public_html/updikegaspari/index.php on line 47
+[23-Sep-2011 09:39:35] PHP Warning:  opendir(images/newProperties/main/257) [<a href='function.opendir'>function.opendir</a>]: failed to open dir: No such file or directory in /home/markweek/public_html/updikegaspari/index.php on line 41
+[23-Sep-2011 09:39:35] PHP Warning:  readdir(): supplied argument is not a valid Directory resource in /home/markweek/public_html/updikegaspari/index.php on line 42
+[23-Sep-2011 09:39:35] PHP Warning:  sort() expects parameter 1 to be array, null given in /home/markweek/public_html/updikegaspari/index.php on line 47
+[23-Sep-2011 09:40:13] PHP Warning:  opendir(images/newProperties/main/257) [<a href='function.opendir'>function.opendir</a>]: failed to open dir: No such file or directory in /home/markweek/public_html/updikegaspari/index.php on line 41
+[23-Sep-2011 09:40:13] PHP Warning:  readdir(): supplied argument is not a valid Directory resource in /home/markweek/public_html/updikegaspari/index.php on line 42
+[23-Sep-2011 09:40:13] PHP Warning:  sort() expects parameter 1 to be array, null given in /home/markweek/public_html/updikegaspari/index.php on line 47
+[23-Sep-2011 09:47:21] PHP Warning:  opendir(images/newProperties/main/257) [<a href='function.opendir'>function.opendir</a>]: failed to open dir: No such file or directory in /home/markweek/public_html/updikegaspari/index.php on line 41
+[23-Sep-2011 09:47:21] PHP Warning:  readdir(): supplied argument is not a valid Directory resource in /home/markweek/public_html/updikegaspari/index.php on line 42
+[23-Sep-2011 09:47:21] PHP Warning:  sort() expects parameter 1 to be array, null given in /home/markweek/public_html/updikegaspari/index.php on line 47
+[23-Sep-2011 10:15:34] PHP Warning:  opendir(images/newProperties/main/257) [<a href='function.opendir'>function.opendir</a>]: failed to open dir: No such file or directory in /home/markweek/public_html/updikegaspari/index.php on line 41
+[23-Sep-2011 10:15:34] PHP Warning:  readdir(): supplied argument is not a valid Directory resource in /home/markweek/public_html/updikegaspari/index.php on line 42
+[23-Sep-2011 10:15:34] PHP Warning:  sort() expects parameter 1 to be array, null given in /home/markweek/public_html/updikegaspari/index.php on line 47
+[23-Sep-2011 16:45:20] PHP Warning:  opendir(images/newProperties/main/257) [<a href='function.opendir'>function.opendir</a>]: failed to open dir: No such file or directory in /home/markweek/public_html/updikegaspari/index.php on line 41
+[23-Sep-2011 16:45:20] PHP Warning:  readdir(): supplied argument is not a valid Directory resource in /home/markweek/public_html/updikegaspari/index.php on line 42
+[23-Sep-2011 16:45:20] PHP Warning:  sort() expects parameter 1 to be array, null given in /home/markweek/public_html/updikegaspari/index.php on line 47
+[25-Sep-2011 14:39:32] PHP Warning:  opendir(images/newProperties/main/257) [<a href='function.opendir'>function.opendir</a>]: failed to open dir: No such file or directory in /home/markweek/public_html/updikegaspari/index.php on line 41
+[25-Sep-2011 14:39:32] PHP Warning:  readdir(): supplied argument is not a valid Directory resource in /home/markweek/public_html/updikegaspari/index.php on line 42
+[25-Sep-2011 14:39:32] PHP Warning:  sort() expects parameter 1 to be array, null given in /home/markweek/public_html/updikegaspari/index.php on line 47
+[25-Sep-2011 14:44:55] PHP Warning:  opendir(images/newProperties/main/257) [<a href='function.opendir'>function.opendir</a>]: failed to open dir: No such file or directory in /home/markweek/public_html/updikegaspari/index.php on line 41
+[25-Sep-2011 14:44:55] PHP Warning:  readdir(): supplied argument is not a valid Directory resource in /home/markweek/public_html/updikegaspari/index.php on line 42
+[25-Sep-2011 14:44:55] PHP Warning:  sort() expects parameter 1 to be array, null given in /home/markweek/public_html/updikegaspari/index.php on line 47
+[25-Sep-2011 14:45:15] PHP Warning:  opendir(images/newProperties/main/257) [<a href='function.opendir'>function.opendir</a>]: failed to open dir: No such file or directory in /home/markweek/public_html/updikegaspari/index.php on line 41
+[25-Sep-2011 14:45:15] PHP Warning:  readdir(): supplied argument is not a valid Directory resource in /home/markweek/public_html/updikegaspari/index.php on line 42
+[25-Sep-2011 14:45:15] PHP Warning:  sort() expects parameter 1 to be array, null given in /home/markweek/public_html/updikegaspari/index.php on line 47
+[25-Sep-2011 14:47:27] PHP Warning:  opendir(images/newProperties/main/257) [<a href='function.opendir'>function.opendir</a>]: failed to open dir: No such file or directory in /home/markweek/public_html/updikegaspari/index.php on line 41
+[25-Sep-2011 14:47:27] PHP Warning:  readdir(): supplied argument is not a valid Directory resource in /home/markweek/public_html/updikegaspari/index.php on line 42
+[25-Sep-2011 14:47:27] PHP Warning:  sort() expects parameter 1 to be array, null given in /home/markweek/public_html/updikegaspari/index.php on line 47
+[25-Sep-2011 14:47:33] PHP Warning:  opendir(images/newProperties/main/257) [<a href='function.opendir'>function.opendir</a>]: failed to open dir: No such file or directory in /home/markweek/public_html/updikegaspari/index.php on line 41
+[25-Sep-2011 14:47:33] PHP Warning:  readdir(): supplied argument is not a valid Directory resource in /home/markweek/public_html/updikegaspari/index.php on line 42
+[25-Sep-2011 14:47:33] PHP Warning:  sort() expects parameter 1 to be array, null given in /home/markweek/public_html/updikegaspari/index.php on line 47
+[25-Sep-2011 14:48:02] PHP Warning:  readdir(): supplied argument is not a valid Directory resource in /home/markweek/public_html/updikegaspari/index.php on line 42
+[25-Sep-2011 14:48:02] PHP Warning:  sort() expects parameter 1 to be array, null given in /home/markweek/public_html/updikegaspari/index.php on line 47
+[25-Sep-2011 15:04:44] PHP Warning:  strpos() [<a href='function.strpos'>function.strpos</a>]: Empty delimiter in /home/markweek/public_html/updikegaspari/index.php on line 56

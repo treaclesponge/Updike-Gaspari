@@ -1,0 +1,36 @@
+	<p class="adminButton"><a href='/properties/admin/properties/listing<? echo ( $curBatch ? '/'.$curBatch.( $sortOrder ? '/'.$sortOrder.( $sortBy ? '/'.$sortBy.( $additional1 ? '/'.$additional1 : '' ) : '' ) : '' ) : '' ); ?>'>back to properties list</a></p>
+
+	<h3>Image management for property:</h3>
+	<p>ID: <? echo $property['Property']['id']; ?><br />
+	<? if( $property['Property']['mls'] ) { ?>
+	MLS: <? echo $property['Property']['mls']; ?><br />
+	<? } ?>
+	Address: <? echo $property['Property']['address']; ?><br />
+	Current number of images: <? echo count( $imageNums ); ?></p>
+
+	<? if( count( $imageNums ) < 16 ) { ?>
+	<p class="adminButton"><a href="/properties/admin/properties/imageAdd/<? echo $property['Property']['id']; ?>">Add new image</a></p>
+	<? } ?>
+
+	<? if( isset( $message )) { ?>
+		<p><strong><? echo $message; ?></strong></p>
+	<? } ?>
+
+	<table id="editTable" class="imageEdit">
+		<tr>
+		<th>Caption</th> 
+		<th>Image</th>
+		<th></th>
+		</tr>
+<?
+	$i = 0;
+	foreach( $imageNums as $imageNum ) {
+		$i++;
+?>
+		<tr <? echo $i%2 ? 'class="oddRow"' : 'class="evenRow"'; ?>>
+			<td valign="top"><? echo $property['Property']['caption'.$imageNum]; ?></td>
+			<td><img src="/images/newProperties/thumb/<? echo $property['Property']['id']; ?>/propID<? echo $property['Property']['id']; ?>-<? echo str_pad( $imageNum, 2, 0, STR_PAD_LEFT ); ?>.jpg" alt="<? echo $property['Property']['caption'.$imageNum]; ?>" width="100" /></a></td>
+	        	<td><a href="/properties/admin/properties/imageAdd/<? echo $property['Property']['id']; ?>/<? echo $imageNum; ?>">edit</a>&nbsp;|&nbsp;<a onclick="return confirm('Are you sure you would like to delete this image?')" href="/properties/admin/properties/imageDelete/<? echo $property['Property']['id']; ?>/<? echo $imageNum; ?>">delete</a></td>
+		</tr>
+	<? } ?>
+	</table>

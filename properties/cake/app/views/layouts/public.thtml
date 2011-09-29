@@ -1,0 +1,98 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Updike Gaspari |<? echo $title_for_layout; ?></title>
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<!-- CSS concatenated and minified via ant build script-->
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/css/summary.css">
+<link rel="stylesheet" href="/css/details.css">
+<link rel="stylesheet" href="/css/lightbox.css">
+
+<!-- end CSS-->
+
+<script src="js/libs/modernizr-2.0.6.min.js"></script>
+</style>
+</head>
+
+<body id="<? echo $body_id_for_layout; ?>" onload="swapPic()" class="<? echo $body_class_for_layout; ?>">
+<div id="containerTop">
+	&nbsp;
+</div>
+<div id="outerWrapper">
+	<div id="innerWrapper">
+		<? echo $content_for_layout ?>
+	</div>
+	<!-- /innerWrapper -->
+	
+</div>
+<!-- /outerWrapper -->
+<div id="credit">
+	<p>site by <a href="http://www.treaclesponge.com" target="_blank">treaclesponge</a></p>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> 
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script> 
+<script src="js/libs/jquery.tweet.js"></script> 
+<script>
+		jQuery(function($){
+			$("#twitter_update_list").tweet({
+			join_text:false,
+			avatar_size: 32,
+			count: 4,
+			username: [ "DTseattleRE"],
+			loading_text: "searching twitter...",
+			refresh_interval: 60
+			});
+		});
+    </script> 
+<!-- scripts concatenated and minified via ant build script--> 
+<script defer src="js/plugins.js"></script> 
+<script defer src="js/script.js"></script> 
+<!-- end scripts--> 
+
+<script src="/js/global.js"></script> 
+<script src="/js/banner.js"></script> 
+<script src="/js/prototype.js"></script> 
+<script src="/js/scriptaculous.js?load=effects,builder"></script> 
+<script src="/js/lightbox.js"></script> 
+
+<!-- cufon --> 
+<script src="/js/libs/cufon/cufon-yui.js"></script> 
+<script src="/js/libs/cufon/Futura_Std_500-Futura_Std_700.font.js"></script> 
+<script type="text/javascript">
+Cufon.replace(['h1','h2','h3','h4','nav ul li','p.price','blockquote p','nav ul li a','#contactform label', ], {
+  hover: true, hoverables: { a: true } }); 
+
+Cufon.replace('h1', {textShadow: '1px 1px 2px #222222'}); 
+
+Cufon.replace('body.home #mainContent h2', {textShadow: '1px 1px 2px #222222'}); 
+
+Cufon.replace('#rightCol h2', {textShadow: '1px 1px 2px #222222'}); 
+
+</script> 
+<!-- end cufon--> 
+
+<script> // Change UA-XXXXX-X to be your site's ID
+    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+    Modernizr.load({
+      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    });
+  </script> 
+
+<!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+</body>
+</html>

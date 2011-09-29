@@ -1,0 +1,189 @@
+
+/*======================================================================================================*/
+/*admin pages*/
+/*======================================================================================================*/
+
+#pageIDadmin {
+  background:#fff;
+}
+
+#pageIDadmin #mainContent {
+  margin-left:20px;
+  width:95%
+}
+
+#pageIDadmin #mainContent img.logo {
+  margin-bottom:20px;
+}
+
+#pageIDadmin #mainContent hr {
+  height:1px;
+  border:none;
+  border-bottom:1px solid #f90;
+  background:#fff
+}
+
+#pageIDadmin #mainContent h3 {
+  clear:both;
+}
+
+/*buttons*/
+#pageIDadmin #mainContent p.adminButton {
+  float:left;
+}
+
+#pageIDadmin #mainContent p.adminButton a {
+  display:block;
+  margin-right:12px;
+  padding:3px 12px;
+  background:#f60;
+  border-width:1px;
+  border-style:solid;
+  border-color:#000;
+  color:#fff;
+}
+
+#pageIDadmin #mainContent p.adminButton a:hover {
+  background:#fff;
+  color:#f60;
+  border-color:#666
+}
+
+#pageIDadmin #mainContent p.logout a {
+  background:#99CCFF;
+  color:#000
+}
+
+/*pageNumber*/
+#pageIDadmin #mainContent #pageNumber {
+  clear:both;
+  padding:12px 0;
+  font-size:.9em;
+}
+
+#pageIDadmin #mainContent #pageNumber br {
+  margin:6px 0;
+}
+
+#pageIDadmin #mainContent #pageNumber a {
+  padding:0 2px;
+  background:#9c9c9c;
+  border:1px solid #000
+}
+
+#pageIDadmin #mainContent #pageNumber a:hover {
+  background:#ccc;
+  color:#000
+}
+
+#pageIDadmin #mainContent #pageNumber span.down {
+  padding:0 2px;
+  background:#99CCFF;
+  border:1px solid #000
+}
+
+/*form*/
+#pageIDadmin #mainContent form td.checkbox input {
+  width:20px !important;
+}
+
+#pageIDadmin form #editTable input:hover,
+ #pageIDadmin form #editTable textarea:hover {
+  background: #FFFFBF;
+}
+
+#pageIDadmin #mainContent form input.submit {
+  float:left;
+  width:70px;
+  background:#666;
+  cursor:pointer;
+  border:1px solid #000;
+  color:#fff;
+}
+
+#pageIDadmin #mainContent form input.submit:hover {
+  background:#f90;
+}
+
+/*table*/
+#pageIDadmin #editTable {
+  border-collapse:collapse;
+  width:100%;
+  background-color:#9c9c9c;
+  font-size:.9em;
+  clear:left;
+}
+
+#pageIDadmin #editTable th {
+  background:#fff;
+  color:#f60;
+  border:1px solid #666;
+}
+
+#pageIDadmin #editTable td {
+  border-left:1px solid #000;
+  padding:6px;
+  vertical-align:top;
+}
+
+#pageIDadmin #editTable td a {
+  color:#666;
+}
+
+#pageIDadmin #editTable td a:hover {
+  color:#fff;
+}
+
+#pageIDadmin #editTable .oddRow {
+  background:#ccc;
+}
+
+/*unpublished*/
+#pageIDadmin #editTable tr.unpublished {
+  filter:alpha(opacity=80);
+  -moz-opacity:0.8;
+  opacity:0.8;
+  border:3px solid #C00;
+}
+
+#pageIDadmin #editTable tr:hover {
+  background:#b2cfaf;
+}
+
+#pageIDadmin #editTable tr.unpublished:hover {
+  background:#cc7070 !important;
+}
+
+/*property add/edit - no hover*/
+#pageIDadmin .addProperty tr:hover,
+#pageIDadmin .imageEdit tr:hover {
+  background:transparent !important;
+}
+
+#pageIDadmin #editTable tr:hover td {
+  color:#111;
+}
+
+#pageIDadmin #editTable tr.unpublished:hover td {
+  color:#fff !important;
+}
+
+#pageIDadmin #editTable .center {
+  text-align:center;
+  color:#666;
+  font-size:18px;
+}
+
+#pageIDadmin #editTable a {
+  color:#f60;
+}
+
+#pageIDadmin #editTable a:hover {
+  color: #000;
+}
+
+/*table overrides*/
+/*image edit*/
+#pageIDadmin table.imageEdit {
+  width:600px !important;
+}

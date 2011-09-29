@@ -1,0 +1,73 @@
+
+		<div id="contactBar">
+			<p>
+        David Updike: 206.329.0484 &nbsp;  &nbsp; | &nbsp;  &nbsp;  Kevin Gaspari: 206.683.2814
+      </p>
+      <p class="contact">
+        <a href="/contact.php" class="aContact">contact us</a>
+
+      </p>
+
+		</div>    <!-- /contactBar -->
+
+		<div id="mainContent">
+		  
+			<h1>User Login:</h1>
+			<p>Please enter your email and password below:</p>
+
+			<? if( $error ) { ?>
+				<p class="msg">The login credentials you supplied could not be recognized. Please try again.</p>
+			<? } ?>
+
+			<form action='' method='post' name='frm_login'>
+		<fieldset>	
+			<legend>Login</legend>
+					<label for='UserUsername'>Email:</label>
+					<? echo $html->input( 'User/username', array( 'size' => '25', 'maxlength' => '60', 'tabindex' => '1' )); ?>
+				<br />
+					<label for='UserPassword'>Password:</label>
+					<? echo $html->password( 'User/password', array( 'onkeypress' => 'return submitenter(this,event)', 
+											 'size' => '25', 'maxlength' => '25', 'tabindex' => '2' )); ?>
+				<input type="submit" name="submit" class="submit" value="login" />
+			</fieldset>
+			</form>
+
+		</div><!-- /mainContent -->
+
+	
+
+<div id="subNavigationHolder">
+		<div id="subNavigation">
+		&nbsp;
+		</div>
+		<!-- /subNavigation -->
+	</div>
+
+	<!-- /subNavigationHolder -->
+
+	    </div>  
+  		<!-- /innerWrapper -->
+  <div id="closure">
+    <div id="navigation">
+      <ul>
+        <li><a href="/about_us.php" id="aAbout">about us</a> </li>
+        <li><a href="/properties/current" id="aCurrentListings">current listings</a></li>
+        <li><a href="/search_for_homes.php" id="aSearchHomes">search for homes</a></li>
+
+        <li><a href="properties/sold" id="aSold">homes sold</a></li>
+        <li><a href="/articles_local_issues.php" id="aArticles">articles</a></li>
+        <li><a href="/buyers.php" id="aBuyers">buyers</a></li>
+        <li><a href="/sellers.php" id="aSellers">sellers</a></li>
+        <li><a href="/properties/admin/users/login" id="aAdmin">active clients</a></li>
+        <li>&nbsp;</li>
+
+      </ul>
+    </div>
+    <!-- /navigation -->
+  </div>
+  <!-- /closure -->
+
+  </div>  
+  <!-- /outerWrapper -->
+
+

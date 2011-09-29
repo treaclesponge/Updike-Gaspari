@@ -1,0 +1,171 @@
+	<p class="adminButton"><a href='/properties/admin/properties/listing<? echo ( $curBatch ? '/'.$curBatch.( $sortOrder ? '/'.$sortOrder.( $sortBy ? '/'.$sortBy.( $additional1 ? '/'.$additional1 : '' ) : '' ) : '' ) : '' ); ?>'>back to property List</a></p>
+
+	<h3><? echo isset( $this->data['Property']['id'] ) && $this->data['Property']['id'] ? 'Edit' : 'Add new'; ?> Property</h3>
+
+	<? if( isset( $errorMessage )) { ?>
+		<p><strong><? echo $errorMessage; ?></strong></p>
+	<? } ?>
+	<? if( isset( $message )) { ?>
+		<p><strong><? echo $message; ?></strong></p>
+	<? } ?>
+
+	<p>All fields marked <span class="required">*</span> are required</p>
+	<form name="form1" method="POST" enctype='multipart/form-data'>
+	<table id="editTable" class="addProperty">
+
+		<tr>
+		<td align="right"><label for="PropertyMls">MLS :</label></td>
+		<td><? echo $html->input( 'Property/mls', array( 'size'=>'15', 'maxlength'=>'30', 'tabindex'=>'1' )); ?></td>
+		</tr>
+
+		<tr>
+		<td align="right" valign="top"><label for="PropertyAddress">Address <span class="required">*</span>:</label></td>
+		<td><? echo $html->input( 'Property/address', array( 'size'=>'50', 'maxlength'=>'255', 'tabindex'=>'2' )); ?><? echo $html->tagErrorMsg( 'Property/address', 'Address is a required field.' ); ?></td>
+		</tr>
+
+		<tr>
+		<td align="right"><label for="PropertyProject">Project :</label></td>
+		<td><? echo $html->input( 'Property/project', array( 'size'=>'50', 'maxlength'=>'255', 'tabindex'=>'3' )); ?></td>
+		</tr>
+
+		<tr>
+		<td align="right"><label for="PropertyStyle">Style :</label></td>
+		<td><? echo $html->input( 'Property/style', array( 'size'=>'50', 'maxlength'=>'255', 'tabindex'=>'4' )); ?></td>
+		</tr>
+
+		<tr>
+		<td align="right" valign="top"><label for="PropertyDescriptor">Descriptive Title :</label></td>
+		<td><? echo $html->textarea( 'Property/descriptor', array( 'cols'=>'50', 'rows'=>'5', 'tabindex'=>'5' )); ?></td>
+		</tr>
+
+		<tr>
+		<td align="right"><label for="PropertyDevelopment">Development :</label></td>
+		<td class="checkbox"><? echo $html->checkbox( 'Property/development', null, array( 'tabindex'=>'6' )); ?></td>
+		</tr>
+
+		<tr>
+		<td align="right"><label for="PropertyCategory">Category :</label></td>
+		<td><? echo $html->selectTag( 'Property/category', $categories, null, array( 'single'=>'single', 'tabindex'=>'7' ), false, false ); ?></td>
+		</tr>
+
+		<tr>
+		<td align="right"><label for="PropertyNeighborhood">Neighborhood :</label></td>
+		<td><? echo $html->input( 'Property/neighborhood', array( 'size'=>'50', 'maxlength'=>'50', 'tabindex'=>'8' )); ?></td>
+		</tr>
+
+		<tr>
+		<td align="right"><label for="PropertyPrice">Price :</label></td>
+		<td><? echo $html->input( 'Property/price', array( 'size'=>'15', 'maxlength'=>'15', 'tabindex'=>'9' )); ?></td>
+		</tr>
+
+		<tr>
+		<td align="right"><label for="PropertyStatus">Status :</label></td>
+		<td><? echo $html->selectTag( 'Property/status', $statuses, null, array( 'single'=>'single', 'tabindex'=>'10' ), false, false ); ?></td>
+		</tr>
+
+		<tr>
+		<td align="right"><label for="PropertyRepSeller">Representing seller :</label></td>
+		<td class="checkbox"><? echo $html->checkbox( 'Property/rep_seller', null, array( 'tabindex'=>'11' )); ?></td>
+		</tr>
+
+		<tr>
+		<td align="right"><label for="PropertyRepBuyer">Representing buyer :</label></td>
+		<td class="checkbox"><? echo $html->checkbox( 'Property/rep_buyer', null, array( 'tabindex'=>'12' )); ?></td>
+		</tr>
+
+		<tr>
+		<td align="right"><label for="PropertyDisplay">Display :</label></td>
+		<td class="checkbox"><? echo $html->checkbox( 'Property/display', null, array( 'tabindex'=>'13' )); ?></td>
+		</tr>
+
+		<tr>
+		<td align="right"><label for="PropertyDateSold">Date sold :</label></td>
+		<td><? echo $html->input( 'Property/date_sold', array( 'maxlength'=>'10', 'tabindex'=>'14', 'readonly'=>'readonly' )); ?><script language="JavaScript">
+	new tcal ({
+		'formname': 'form1',
+		'controlname': 'PropertyDateSold'
+	});
+
+	</script>
+<!--<a href="javascript:cal1.popup();"><img src="/images/calendar/cal.gif" width="16" height="16" border="0" alt="click here to pick a date"></img></a>
+-->
+</td>
+		</tr>
+
+		<tr>
+		<td align="right" valign="top"><label for="PropertyBed">Bed :</label></td>
+		<td><? echo $html->input( 'Property/bed', array( 'size'=>'15', 'maxlength'=>'20', 'tabindex'=>'15' )); ?><? echo $html->tagErrorMsg( 'Property/bed', 'Bed must be a valid number.' ); ?></td>
+		</tr>
+
+		<tr>
+		<td align="right" valign="top"><label for="PropertyBath">Bath :</label></td>
+		<td><? echo $html->input( 'Property/bath', array( 'size'=>'15', 'maxlength'=>'20', 'tabindex'=>'16' )); ?><? echo $html->tagErrorMsg( 'Property/bath', 'Bath must be a valid number.' ); ?></td>
+		</tr>
+		
+		<tr>
+		<td align="right" valign="top"><label for="PropertyFlooringPropertyFlooring">Flooring :</label></td>
+		<td><? echo $html->selectTag( 'PropertyFlooring/PropertyFlooring', $floorings, $selectedPropertyFloorings, array( 'multiple' => 'multiple', 'tabindex' => '17', 'size' => '11' ), false, false ); ?><br />Hold down the Ctrl key (Windows) or the Apple key (Mac OS) to select multiple items.</td>
+		</tr>
+
+		<tr>
+		<td align="right" valign="top"><label for="PropertyFireplace">No. of fireplaces :</label></td>
+		<td><? echo $html->input( 'Property/fireplace', array( 'size'=>'15', 'maxlength'=>'20', 'tabindex'=>'18' )); ?><? echo $html->tagErrorMsg( 'Property/fireplace', 'No. of fireplaces must be a valid positive whole number.' ); ?></td>
+		</tr>
+
+		<tr>
+		<td align="right"><label for="PropertyHeating">Heating :</label></td>
+		<td><? echo $html->input( 'Property/heating', array( 'size'=>'50', 'maxlength'=>'255', 'tabindex'=>'19' )); ?></td>
+		</tr>
+
+		<tr>
+		<td align="right" valign="top"><label for="PropertySqft">Square feet :</label></td>
+		<td><? echo $html->input( 'Property/sqft', array( 'size'=>'15', 'maxlength'=>'20', 'tabindex'=>'20' )); ?><label style="clear:left;" for="PropertyPerKcar">per KCAR ?</label><? echo $html->checkbox( 'Property/per_kcar', null, array( 'tabindex'=>'21' )); ?><? echo $html->tagErrorMsg( 'Property/sqft', 'Square feet must be a valid positive whole number.' ); ?></td>
+		</tr>
+
+		<tr>
+		<td align="right" valign="top"><label for="PropertyLotsize">Lot size :</label></td>
+		<td><? echo $html->input( 'Property/lotsize', array( 'size'=>'15', 'maxlength'=>'20', 'tabindex'=>'22' )); ?><? echo $html->tagErrorMsg( 'Property/lotsize', 'Lot size must be a valid positive whole number.' ); ?></td>
+		</tr>
+
+		<tr>
+		<td align="right"><label for="PropertyParking">Parking :</label></td>
+		<td><? echo $html->input( 'Property/parking', array( 'size'=>'50', 'maxlength'=>'255', 'tabindex'=>'23' )); ?></td>
+		</tr>
+
+		<tr>
+		<td align="right" valign="top"><label for="PropertyTaxes">Taxes :</label></td>
+		<td><? echo $html->input( 'Property/taxes', array( 'size'=>'15', 'maxlength'=>'20', 'tabindex'=>'24' )); ?><? echo $html->tagErrorMsg( 'Property/taxes', 'Taxes must be a valid positive whole number.' ); ?></td>
+		</tr>
+
+		<tr>
+		<td align="right" valign="top"><label for="PropertyHodues">Ho dues :</label></td>
+		<td><? echo $html->input( 'Property/hodues', array( 'size'=>'15', 'maxlength'=>'20', 'tabindex'=>'25' )); ?><? echo $html->tagErrorMsg( 'Property/hodues', 'Ho dues must be a valid positive whole number.' ); ?></td>
+		</tr>
+
+		
+		<tr>
+		<td align="right" valign="top"><label for="PropertyYrbuilt">Year built :</label></td>
+		<td><? echo $html->input( 'Property/yrbuilt', array( 'size'=>'15', 'maxlength'=>'4', 'tabindex'=>'26' )); ?><? echo $html->tagErrorMsg( 'Property/yrbuilt', 'Year built must be a valid year, or can be left empty.' ); ?></td>
+		</tr>
+
+		<tr>
+		<td align="right"><label for="PropertyOtherLabel1">Other label :</label></td>
+		<td><? echo $html->input( 'Property/other_label_1', array( 'size'=>'50', 'maxlength'=>'255', 'tabindex'=>'28' )); ?>
+		<br />Please note that you must enter values into both this field and the next one ('Other value') for this new field to appear on the property detail page.</td>
+		</tr>
+
+		<tr>
+		<td align="right"><label for="PropertyOtherValue1">Other value :</label></td>
+		<td><? echo $html->input( 'Property/other_value_1', array( 'size'=>'50', 'maxlength'=>'255', 'tabindex'=>'29' )); ?></td>
+		</tr>
+<tr>
+		<td align="right" valign="top"><label for="PropertyText">Text :</label></td>
+		<td><? echo $html->textarea( 'Property/text', array( 'cols'=>'50', 'rows'=>'5', 'tabindex'=>'27' )); ?>
+		<br />You may enter approx 2 paragraphs. Use the enter key to start a new row. Press Enter twice for a new paragraph.</td>
+		</tr>
+
+
+		<? echo $html->hiddenTag( 'Property/id' ); ?>
+
+	<tr><td></td><td><input name="data[Form][save]" class="submit" type="submit" value="save" /></td></tr></table>
+	</form>

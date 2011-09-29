@@ -1,0 +1,227 @@
+/*============================================================================*/
+/*featured property area*/
+/*============================================================================*/
+section#featureProperty {
+	background:#939393;
+	width:100%;
+    height:381px;
+	overflow:hidden;
+}
+
+/*============================================================================*/
+/*featureContent*/
+#featureContent {
+	float:left;
+	width:370px;
+}
+
+#featureContent h1 {
+	height:55px;
+	background:url(../images/backgrounds/h1BG_end.png) 100% 0 no-repeat;
+	padding-right:30px;
+	position:relative;
+	z-index:999;
+	margin-right:-31px;
+	width:339px;
+	font-size:1.2em;
+	letter-spacing:0.1em;
+}
+
+#featureContent h1 span {
+	display:block;
+	color:#fff;
+	text-transform:uppercase;
+	text-shadow:#333 1px 1px 2px;
+	padding:18px 0 18px 25px;
+	font-weight:normal;
+	background:url(../images/backgrounds/h1BG.png) 0 0 repeat-x;
+	width:313px;
+}
+
+
+#featureContent .content {
+	background:url(../images/backgrounds/featureContentBG.png) 0 0 no-repeat;
+	height: 315px;
+    margin-left: 6px;
+    padding: 0 120px 0 18px;
+    position: relative;
+    top: -15px;
+}
+
+#featureContent .content h2 {
+	color:#000;
+	font-size:1.3em;
+	font-weight:normal;
+}
+
+#featureContent .content p {
+}
+
+#featureContent .content p.price {
+	color:#df6413;
+	font-size:1.4em;
+}
+
+#featureContent.content p.readMore {
+}
+/*============================================================================*/
+/*carousel*/
+#slideshow {
+    position:relative;
+    height:381px;
+	float:right;
+	width:611px;
+	
+}
+
+div.galleryContent {
+	/* The display of content is enabled using jQuery so that the slideshow content won't display unless javascript is enabled. */
+	display: none;
+	float: left;
+	width: 611px;
+}
+
+
+.no-js div.galleryContent {
+	display: block;
+	background:url(../images/propID257-01.jpg) 0 0 no-repeat;
+}
+
+div.galleryContent a {
+	text-decoration: none;
+    height:381px;
+	display:block;
+	width:611px;
+}
+div.galleryContent a img {
+    position:absolute;
+    top:0;
+    left:0;
+	z-index:999;
+}
+
+div.slideshow-container {
+	position: relative;
+	clear: both;
+	height: 381px; /* This should be set to be at least the height of the largest image in the slideshow */
+}
+
+div.loader {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-image:url(../images/carousel/loader.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 611px;
+	height: 381px; /* This should be set to be at least the height of the largest image in the slideshow */
+}
+
+.no-js div.loader {
+	display: none;
+}
+
+div.slideshow {
+}
+
+div.slideshow span.image-wrapper {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+div.slideshow img {
+	display:block;
+	margin:0;
+	padding:0;
+}
+
+
+/*============================================================================*/
+/*thumbnails (circles)*/
+#thumbs {
+	position:absolute;
+	bottom:25px;
+	left:25px;
+}
+
+.no-js #thumbs {
+	display:none;
+}
+
+
+ul.thumbs {
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
+
+ul.thumbs li {
+	float: left;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+ul.thumbs li a.thumb {
+	float: left;
+	display:block;
+	background:url(../images/carousel/circles.png) 0 0 no-repeat;
+	width:12px;
+	height:12px;
+	margin-right:4px;
+}
+
+.ie7 ul.thumbs li a.thumb {
+	background-color: #979797;
+}
+
+ul.thumbs li a span {
+	display:block;
+	text-indent:-999em;
+}
+
+ul.thumbs li a {}
+ul.thumbs li.selected a.thumb {
+	background-position:-17px 0 ;
+}
+
+a.thumb:focus {
+	outline: none;
+}
+
+/*============================================================================*/
+/*section mainContent*/
+/*============================================================================*/
+section#mainContent {
+}
+
+body.home section#mainContent #mainImage {
+	margin:20px 15px 20px 0;
+}
+body.home section#mainContent .content {
+	background:url(../images/backgrounds/h2-wideBox_gradient.png) 0 100% no-repeat;
+	width:328px;
+}
+
+
+/*============================================================================*/
+/*section rightCol*/
+/*============================================================================*/
+section#rightCol {
+	margin-top:0;
+}
+
+section#rightCol  h2 {
+}
+
+section#rightCol  .contentBlocks {
+}
+
+section#rightCol  .content {
+	width:225px;
+}
+
+
+

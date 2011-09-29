@@ -1,0 +1,69 @@
+<?
+if( !isset( $formSubmit ) || $formSubmit ) {
+  $linkPrefix = "javascript:SubmitForm( '";
+  $linkPostfix = "', document.forms[0] );";
+}
+else {
+  $linkPrefix = "";
+  $linkPostfix = "";
+}
+
+if( !isset( $sortField )) {
+  $sortField = false;
+}
+
+$showBatchBar = isset( $showBatchBar ) ? $showBatchBar : true;
+$batchPrefix = isset( $batchPrefix ) ? $batchPrefix : 'Showing';
+$batchPostfix = isset( $batchPostfix ) ? $batchPostfix : 'properties';
+?>
+<div id="pageNumber">
+<?
+      if( $showBatchBar ) {
+	if( isset( $batchStart ) && $numBatches > 1 ) {
+?>
+	  <? echo $batchPrefix; ?> <? echo $batchStart; ?> to <? echo $batchEnd; ?> of <? echo $numItems; ?> <? echo $batchPostfix; ?><br />
+<?
+	}
+	else {
+?>
+	  <? echo $batchPrefix; ?> <? echo $numItems; ?> <? echo $batchPostfix; ?><br />
+<?
+	}
+      }
+
+      if( $numBatches > 1 ) {
+?>
+	      Page :
+<?
+
+	      if( $curBatch > 1 ) {
+?>	
+		<a href="<? echo $linkPrefix.$targetPrefix; ?><? echo ($curBatch - 1); ?>/<? echo $sortOrder.($sortField ? '/'.$sortField : '').($additional1 ? '/'.$additional1 : '').($additional2 ? '/'.$additional2 : '').$linkPostfix; ?>" ><span class="navPages">&laquo;</span></a>
+<?
+	      }
+
+	      for( $i = 1; $i <= $numBatches; $i++ ) {
+
+                if( $i == $curBatch ) {
+?>
+		  <span class='down'><? echo $i; ?></span>
+<?
+		}else{
+?>
+		  <a href="<? echo $linkPrefix.$targetPrefix; ?><? echo $i; ?>/<? echo $sortOrder.($sortField ? '/'.$sortField : '').($additional1 ? '/'.$additional1 : '').($additional2 ? '/'.$additional2 : '').$linkPostfix; ?>"><? echo $i; ?></a>
+<?
+	        }
+	      }
+
+	      if( $curBatch < $numBatches ) {
+?>
+		<a href="<? echo $linkPrefix.$targetPrefix; ?><? echo ($curBatch + 1); ?>/<? echo $sortOrder.($sortField ? '/'.$sortField : '').($additional1 ? '/'.$additional1 : '').($additional2 ? '/'.$additional2 : '').$linkPostfix; ?>" ><span class="navPages">&raquo;</span></a>
+<?
+	      }
+?>
+
+<?
+      }
+?>
+</div>
+

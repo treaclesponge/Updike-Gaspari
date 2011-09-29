@@ -1,0 +1,125 @@
+<? echo $this->renderElement( 'topbar_contact' ); ?>
+
+<section id="mainContent">
+	<div class="content">
+		<h2><? echo $pageHeader; ?></h2>
+		<div id="sortFunctions">
+				
+			<div class="sortorder">
+				<form name='form1' id='form1' method="POST">
+					<label for="ListingRepView">View Only: </label>
+					<? echo $html->selectTag( 'Listing/rep_view', $listingRepView, null,
+								  array( 'single'=>'single', 'tabindex'=>'1',
+									 'onchange'=>'form1.action=\''.$targetPrefix.'1/'.$sortOrder.'/'.$sortField.'/'.$typeFilter.'/\'+form1.ListingRepView.options[form1.ListingRepView.selectedIndex].value; form1.submit()' ), false, false ); ?> 
+				</form>
+			</div>
+			<div class="sortorder">
+	
+				<form name='form2' id='form2' method="POST">
+					<label for="ListingSortFilter">Sort Order: </label>
+					<? echo $html->selectTag( 'Listing/sort_filter', $listingSortFilter, null,
+								  array( 'single'=>'single', 'tabindex'=>'2',
+									 'onchange'=>'form2.action=\''.$targetPrefix.'1/\'+form2.ListingSortFilter.options[form2.ListingSortFilter.selectedIndex].value+\'/'.$typeFilter.'/'.$this->data['Listing']['rep_view'].'\'; form2.submit()' ), false, false ); ?> 
+				</form>
+			</div>
+		</div> 
+		<!-- /sortFunctions -->
+	
+		<div id="propertySummaryHolder" class="clearfix">
+			<ul>
+				<? if( !count( $properties )) { ?>
+		
+					<li>There were no properties found.</li>
+		
+				<? }else{ ?>
+		
+					<? foreach( $properties as $property ) { ?>
+		
+						<li class="summary">
+						<a href="/properties/detail/<? echo $property['Property']['id']; ?>">
+		
+						<? if( isset( $property['imageNum'] )) { ?>
+		
+							<img src="/images/newProperties/thumb/<? echo $property['Property']['id']; ?>/propID<? echo $property['Property']['id']; ?>-<? echo str_pad( $property['imageNum'], 2, 0, STR_PAD_LEFT ); ?>.jpg" <? echo $property['Property']['caption'.$property['imageNum']] ? "alt='".$property['Property']['caption'.$property['imageNum']]."'" : ""; ?> title="<? echo $property['Property']['descriptor'] ? $property['Property']['descriptor'].' | ' : ''; ?>Click for more details" />
+		
+						<? }else{ ?>
+		
+							<img src="/images/noimage.gif" title="<? echo $property['Property']['descriptor'] ? $property['Property']['descriptor'].' | ' : ''; ?>Click for more details" />
+		
+						<? } ?>
+		
+						</a>
+		
+						<? if( $property['Property']['descriptor'] ) { ?>
+							<h2><? echo $property['Property']['descriptor']; ?></h2>
+						<? } ?>
+						<? if( $property['Property']['neighborhood'] ) { ?>
+							<h3><? echo $property['Property']['neighborhood']; ?></h3>
+						<? } ?>
+						<? if( $property['Property']['price'] ) { ?>
+							<h3>$<? echo number_format( $property['Property']['price'] ); ?></h3>
+						<? } ?>
+		
+						<p><a href="/properties/detail/<? echo $property['Property']['id']; ?>" class="moreDetails" title="more details about <? echo $property['Property']['descriptor']; ?>">details &raquo;</a></p>
+		
+						</li>    
+						<!-- /summary -->
+		
+					<? } ?>
+		
+				<? } ?>
+		
+			</ul>    
+			</div>    
+		<!-- /propertySummaryHolder -->
+	
+	</div>
+	<!-- /content -->
+</section>
+<!-- /mainContent -->
+
+<div id="pageNumberHolder">
+	<? echo $this->renderElement( 'pagenav', array( 'targetPrefix' => $targetPrefix,
+							'formSubmit' => false,
+							'curBatch' => $curBatch,
+							'numBatches' => $numBatches,
+							'sortOrder' => $sortOrder,
+							'sortField' => $sortField,
+							'additional1' => $typeFilter,
+							'additional2' => $this->data['Listing']['rep_view'],
+							'showBatchBar' => false,
+							'batchPrefix' => '', 
+							'batchPostfix' => '' )); ?>
+</div><!-- /pageNumberHolder -->
+
+<div id="subNavigationHolder">
+
+	<div id="subNavigation">
+
+		<? if( $sold ) { ?>
+
+			<ul>
+				<li class="subnav_title">properties we&#146;ve sold: </li>
+
+				<? foreach( $propertyCategories as  $propertyCategory ) { ?>
+					<? $propertyCategory = $propertyCategory['PropertyCategory']; ?>
+					<li><a <? echo ($propertyCategory['title'] == $selectedCategory) ? 'class="down"' : ''; ?> href="<? echo $targetPrefix; ?>1/<? echo $sortOrder; ?>/<? echo $sortField; ?>/<? echo $propertyCategory['name']; ?>/<? echo $this->data['Listing']['rep_view']; ?>">[ <? echo $propertyCategory['title']; ?> ]</a></li>
+				<? } ?>
+
+			</ul>
+
+		<? } ?>
+
+	</div>
+	<!-- /subNavigation -->
+
+</div>
+<!-- /subNavigation_holder -->
+
+</div>
+<!-- /innerWrapper -->
+
+<? echo $this->renderElement( 'bottomnav' ); ?>
+
+</div>
+<!-- /outerWrapper -->

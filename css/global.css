@@ -1,0 +1,540 @@
+/* CSS Document */
+
+/*============================================================================*/
+/*basics*/
+body {
+	background:#acacac;
+}
+
+
+/*============================================================================*/
+/*frames*/
+
+#containerTop {
+	width:1000px;
+	height:26px;
+	background:url(../images/backgrounds/containerTop.png) 0 0 no-repeat;
+	position:relative;
+	margin:0 auto;
+}
+
+#outerWrapper {
+	width:1000px;
+	margin:auto;
+	background:url(../images/backgrounds/containerRepeat.png) 0 0 repeat-y;
+	position:relative;
+}
+
+
+#containerBottom {
+	width:100%;
+	height:26px;
+	background:url(../images/backgrounds/containerBottom.png) 0 0 no-repeat;
+	position:relative;
+	top:26px;
+}
+#containerBottom {
+	height:45px;
+	background:url(../images/backgrounds/containerBottom_home.png) 0 0 no-repeat;
+	top:45px;
+}
+
+#innerWrapper {
+	width:981px;
+	overflow:hidden;
+	margin-left:9px;
+}
+
+/*============================================================================*/
+/*header*/
+
+header {
+	width:100%;
+}
+
+/*logo*/
+header #logo {
+	float:left;
+	margin:0 0 10px 25px;
+}
+
+header #logo img {
+}
+
+/*icons*/
+header #icons {
+	float:left;
+	margin:0 0 10px 25px;
+	position:absolute;
+	right:30px;
+	top:14px;
+}
+
+header #icons img {
+	margin-left:12px;
+}
+
+/*============================================================================*/
+/*main navigation*/
+header nav#mainNav {
+	background:url(../images/backgrounds/navBG.png) 0  repeat-x;
+	float:left;
+	clear:both;
+	width:100%;
+	height:26px;
+}
+
+header nav#mainNav ul {
+	float:right;}
+
+header nav#mainNav ul li {
+	float:left;
+	margin:0 10px 0 0;
+	height:26px;
+	background:url(../images/backgrounds/navDivider.png) 0 0 no-repeat;
+}
+
+header nav#mainNav ul li a {
+	display:block;
+	padding:3px 10px 3px 18px;
+	color:#000;
+	text-decoration:none;
+	outline:none;
+}
+
+header nav#mainNav ul li a:hover {
+	color:#df6413;
+}
+
+/*============================================================================*/
+/*sub navigation*/
+header nav#subNav {
+	background:url(../images/backgrounds/subnavBG.png) 0  repeat-x;
+    border-bottom: 1px solid #666;
+    clear: both;
+    float: left;
+    height: 26px;
+    width: 100%;}
+
+header nav#subNav ul {
+	float:right;}
+
+header nav#subNav ul li {
+	float:left;
+	margin:0 10px 0 0;
+	height:26px;
+}
+header nav#subNav ul li.first {
+	background:none;
+}
+
+header nav#subNav ul li a {
+	display:block;
+	padding:3px 10px 3px 18px;
+	color:#7B9521;
+	text-decoration:none;
+}
+
+header nav#subNav ul li a:hover {
+	color:#df6413;
+}
+
+header nav#subNav ul li.subNavTitle  {
+	background:none;
+}
+header nav#subNav ul li.subNavTitle span {
+	display:block;
+	padding:3px 10px 3px 18px;
+	color:#000;
+	text-decoration:none;
+}
+
+
+
+
+
+
+/*============================================================================*/
+/*footer*/
+footer {
+	width:960px;
+}
+footer nav {}
+footer nav ul{
+	float:right;
+	margin-top:8px;
+}
+
+footer nav ul li {
+	float:left;
+	margin-left:10px;
+	padding-left:10px;
+	border-left:1px solid black;
+}
+
+footer nav ul li.first {
+	border-left:none;
+}
+footer nav ul li a {
+	display:block;
+	color:#000;
+	text-decoration:none;
+}
+
+
+/*============================================================================*/
+/*credit*/
+#credit {
+	width:960px;
+	margin:45px auto;
+}
+#credit p {
+	text-align:right;
+	font-size:.8em;
+}
+
+
+
+
+
+
+/*============================================================================*/
+/*read more button*/
+/* Background right image */ 
+p.readMore a.button {
+	background:url(../images/buttons/arrowButton_right.png) no-repeat scroll top right;
+	display: block;
+	float: left;
+	height: 24px;
+	margin-right: 6px;
+	padding-right: 8px;
+	color: #fff;
+	text-shadow:#000 1px 1px 2px;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+/* Background left image */ 
+p.readMore a.button span {
+	background:url(../images/buttons/arrowButton_left.png) no-repeat; 
+	display: block;
+	padding: 4px 8px 6px 11px;
+} 
+p.readMore a.button:hover span{
+	text-shadow:none;
+}
+
+/*============================================================================*/
+/*section mainContent*/
+/*============================================================================*/
+section#mainContent {
+	float:left;
+	width:724px;
+}
+/*mainImage*/
+section#mainContent #mainImage {
+	float:left;
+	margin:20px 15px;
+	width:342px;
+}
+
+section#mainContent #mainImage img.mainImage {
+}
+
+section#mainContent #mainImage img.thumbnail {
+	border: 1px solid #ccc;
+    float: left;
+    margin-left: 12px;
+    width: 100px;}
+
+
+#mainContent h2 {
+	font-size:1.4em;
+	font-weight:normal;
+	color: #000;
+	margin:0;
+}
+
+body.home #mainContent h2 {
+	text-shadow:#222 1px 1px 2px;
+	font-size:1.2em;
+}
+
+#mainContent .content {
+	width:320px;
+	float:left;
+	padding:20px 15px;
+}
+
+#mainContent .content p {
+}
+
+
+/*============================================================================*/
+/*contentBlocks*/
+/*============================================================================*/
+.contentBlocks {
+	float:left;
+	margin:16px 0 0 0;
+}
+
+.contentBlocks h2 {
+	background:url(../images/backgrounds/h2-wideBox_green.png) 0 0 no-repeat;
+	width:360px;
+	height:40px;
+	display:block;
+	font-size:1.2em;
+	font-weight:normal;
+	color: #fff !important;
+	text-shadow:#222 1px 1px 2px;
+	margin:0;
+	position:relative;
+	z-index:99;
+}
+.contentBlocks h2 span {
+	padding:5px 25px;
+	display:block;
+}
+
+.contentBlocks .content {
+	background:url(../images/backgrounds/h2-wideBox_gradient.png) 0 100% no-repeat;
+	width:320px;
+	float:left;
+	padding:20px;
+	position:relative;
+	top:-11px;
+}
+.contentBlocks .content p {
+	margin:0 0 1em 0;
+}
+.contentBlocks .content h4 {
+	margin:0px;
+}
+
+/*============================================================================*/
+/*aboutUs*/
+#aboutUs {
+}
+
+#aboutUs h2 {
+}
+
+#aboutUs h2 span {
+}
+
+#aboutUs h4 {
+	font-weight:normal;
+}
+#aboutUs p {
+	font-size:.9em;
+}
+
+
+/*============================================================================*/
+/*testimonials*/
+#testimonials {
+	margin:9px 0 0 0}
+
+#testimonials h2 {
+}
+
+#testimonials h2 span {
+}
+
+
+#testimonials blockquote{
+	display:block;
+	background:url(../images/quotes/openQuotes.png) 0 0 no-repeat;
+	margin:0;
+	padding:15px;
+}
+
+#testimonials blockquote p {
+}
+
+#testimonials blockquote p img {
+	margin-left:6px;
+	margin-top:-6px;
+}
+
+
+
+
+
+
+/*============================================================================*/
+/*section rightCol*/
+/*============================================================================*/
+section#rightCol {
+	float:left;
+	width:257px;
+	margin-top:30px;
+}
+
+
+section#rightCol  h2 {
+	background:url(../images/backgrounds/h2-narrowBox_orange.png) 0 0 no-repeat;
+	width:100%;
+}
+
+section#rightCol  .contentBlocks {
+	margin:16px 20px;
+	width:224px;
+	float:right;
+}
+
+section#rightCol  .content {
+	background-image:url(../images/backgrounds/h2-narrowBox_gradient.png);
+	width:184px;
+}
+
+
+/*definition  lists*/
+section#rightCol .content  dl {
+}
+
+section#rightCol .content  dl dt {
+	font-weight:bold;
+	margin-top:1em;
+}
+
+section#rightCol .content  dl dd {
+	margin:0 0 0 20px
+}
+
+/*ordered  lists*/
+section#rightCol .content  ol {
+	padding-left:0;
+}
+
+section#rightCol .content  ol li {
+	margin:0 0 1em 20px
+}
+
+/*============================================================================*/
+/*twitter*/
+#twitter h2 span {
+}
+#twitter .content {
+	padding:0;
+}
+
+#twitter_update_list {
+	margin:15px;
+	width:210px;
+	font-size:.9em;
+}
+
+#twitter_update_list ul {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+#twitter_update_list li {
+	margin:1em 0 0 0;
+	padding:1em 0 0 0;
+	list-style:none;
+	border-top: 1px dotted #df6413;
+	width:195px;
+}
+
+#twitter_update_list li.tweet_first {
+   border-top: none;
+}
+
+#twitter_update_list li img {
+   margin: 0 6px 6px 0;
+}
+
+#twitter_update_list li a {
+   color: #df6413;
+   border-bottom: dotted 1px;
+   text-decoration: none;
+}
+
+#twitter_update_list li a:hover {
+   color: #333;
+}
+
+/*============================================================================*/
+/*contact*/
+/*============================================================================*/
+/*galleryHolder*/
+form#contactform {}
+
+#contactform label {
+	display:block;
+	float:left;
+	width:100px;
+	font-size:1.0em;
+	font-weight:normal;
+	color:#df6413;
+	margin-bottom:3px;
+}
+form#contactform input {
+	border-color:#B7B7B7 #E8E8E8 #E8E8E8 #B7B7B7;
+	border-style:solid;
+	border-width:1px;
+	padding:6px;
+	font-size:1.0em;
+	color:#333;
+	margin-bottom:8px;
+	width:190px;
+	float:left;
+}
+form#contactform input:focus,
+form#contactform textarea:focus {
+  background:#FFFCDF;
+}
+
+form#contactform textarea {
+	font-family:Arial, Tahoma, Helvetica, sans-serif;
+	font-size:100%;
+	padding:0.6em 0.5em 0.7em;
+	border-color:#B7B7B7 #E8E8E8 #E8E8E8 #B7B7B7;
+	border-style:solid;
+	border-width:1px;
+	width:285px;
+	height:100px;
+}
+
+form#contactform input#submit {
+	background:url(../images/buttons/arrowButton_left.png) no-repeat; 
+	margin:6px 0;
+	border:none;
+	width:auto;
+	float:right;
+	padding: 2px 6px;
+	color: #fff;
+	text-shadow:#000 1px 1px 2px;
+	font-size:.9em;
+	font-weight:bold;
+	text-decoration:none;
+	height:24px;
+}
+form#contactform input#submit:hover {
+	text-shadow:none;
+}
+
+/*errors*/
+form#contactform label.error {
+	color:#C03;
+	font-size:.9em;
+	margin-bottom:6px;
+}
+
+form#contactform input.error {
+	border-color:#C03;
+	border-width:2px;
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,111 @@
+	<p class="adminButton"><a href="/properties/admin/properties/listing/<? echo $curBatch; ?>/<? echo $sortOrder; ?>/<? echo $sortBy; ?>/<? echo $additional1 ? '0' : '1'; ?>"><? echo $additional1 ? 'Summary view' : 'Expanded view'; ?></a></p>
+	
+	<p class="adminButton"><a href="/properties/admin/properties/add">ADD new property</a></p>
+	<p class="adminButton logout"><a href="/properties/admin/users/logout">Logout</a></p>
+	<? if( isset( $message )) { ?>
+		<p><strong><? echo $message; ?></strong></p>
+	<? } ?>
+
+	<? echo $this->renderElement( 'pagenav', array( 'targetPrefix' => '/properties/admin/properties/listing/',
+							'formSubmit' => false, 
+							'curBatch' => $curBatch, 
+							'numBatches' => $numBatches,
+							'sortOrder' => $sortOrder,
+							'sortField' => $sortBy,
+							'additional1' => $additional1,
+							'batchPrefix' => 'Listing', 
+							'batchPostfix' => $additional1 ? 'in expanded view (old site)' : 'in summary view' )); ?>
+
+	<table id="editTable">
+		<tr>
+		<th><a href="/properties/admin/properties/listing/<? echo $curBatch; ?>/<? echo $sortOrder == 'asc' ? 'desc' : 'asc'; ?>/id/<? echo $additional1; ?>" title="Sort by ID <? echo $sortOrder == 'asc' ? 'descending' : 'ascending'; ?>">ID</a></th> 
+		<th><a href="/properties/admin/properties/listing/<? echo $curBatch; ?>/<? echo $sortOrder == 'asc' ? 'desc' : 'asc'; ?>/mls/<? echo $additional1; ?>" title="Sort by MLS <? echo $sortOrder == 'asc' ? 'descending' : 'ascending'; ?>">MLS</a></th> 
+		<th><a href="/properties/admin/properties/listing/<? echo $curBatch; ?>/<? echo $sortOrder == 'asc' ? 'desc' : 'asc'; ?>/address/<? echo $additional1; ?>" title="Sort by Address <? echo $sortOrder == 'asc' ? 'descending' : 'ascending'; ?>">Address</a></th> 
+		<? if( $additional1 ) { ?>
+		<th>Project</th>
+		<th>Style</th>
+		<th>Descriptive Title</th>
+		<th>Development</th>
+		<? } ?>
+		<th><a href="/properties/admin/properties/listing/<? echo $curBatch; ?>/<? echo $sortOrder == 'asc' ? 'desc' : 'asc'; ?>/category/<? echo $additional1; ?>" title="Sort by Category <? echo $sortOrder == 'asc' ? 'descending' : 'ascending'; ?>">Category</a></th>
+		<th><a href="/properties/admin/properties/listing/<? echo $curBatch; ?>/<? echo $sortOrder == 'asc' ? 'desc' : 'asc'; ?>/neighborhood/<? echo $additional1; ?>" title="Sort by Neighborhood <? echo $sortOrder == 'asc' ? 'descending' : 'ascending'; ?>">Neighborhood</a></th>
+		<th><a href="/properties/admin/properties/listing/<? echo $curBatch; ?>/<? echo $sortOrder == 'asc' ? 'desc' : 'asc'; ?>/price/<? echo $additional1; ?>" title="Sort by Price <? echo $sortOrder == 'asc' ? 'descending' : 'ascending'; ?>">Price</a></th>
+		<th><a href="/properties/admin/properties/listing/<? echo $curBatch; ?>/<? echo $sortOrder == 'asc' ? 'desc' : 'asc'; ?>/status/<? echo $additional1; ?>" title="Sort by Status <? echo $sortOrder == 'asc' ? 'descending' : 'ascending'; ?>">Status</a></th>
+		<th><a href="/properties/admin/properties/listing/<? echo $curBatch; ?>/<? echo $sortOrder == 'asc' ? 'desc' : 'asc'; ?>/date_added/<? echo $additional1; ?>" title="Sort by Date added <? echo $sortOrder == 'asc' ? 'descending' : 'ascending'; ?>">Date added</a></th>
+		<th><a href="/properties/admin/properties/listing/<? echo $curBatch; ?>/<? echo $sortOrder == 'asc' ? 'desc' : 'asc'; ?>/date_sold/<? echo $additional1; ?>" title="Sort by Date sold <? echo $sortOrder == 'asc' ? 'descending' : 'ascending'; ?>">Date sold</a></th>
+		<th><a href="/properties/admin/properties/listing/<? echo $curBatch; ?>/<? echo $sortOrder == 'asc' ? 'desc' : 'asc'; ?>/rep_seller/<? echo $additional1; ?>" title="Sort by Representing seller <? echo $sortOrder == 'asc' ? 'descending' : 'ascending'; ?>">Representing seller</a></th>
+		<th><a href="/properties/admin/properties/listing/<? echo $curBatch; ?>/<? echo $sortOrder == 'asc' ? 'desc' : 'asc'; ?>/rep_buyer/<? echo $additional1; ?>" title="Sort by Representing buyer <? echo $sortOrder == 'asc' ? 'descending' : 'ascending'; ?>">Representing buyer</a></th>
+		<? if( $additional1 ) { ?>
+		<th>Bed</th>
+		<th>Bath</th>
+		<th>Flooring</th>
+		<th>Fireplace</th>
+		<th>Heating</th>
+		<th>Square&nbsp;feet</th>
+		<th>Lot&nbsp;size</th>
+		<th>Parking</th>
+		<th>Taxes</th>
+		<th>Ho&nbsp;dues</th>
+		<th>Year built</th>
+		<? } ?>
+		<th></th>
+		</tr>
+<?
+	$i = 0;
+	foreach( $properties as $property ) {
+		$i++;
+
+?>
+		<tr class="<? echo $i%2 ? 'oddRow' : 'evenRow'; ?> <? echo $property['Property']['display'] ? '' : 'unpublished'; ?>">
+			<td><? echo $property['Property']['id']; ?></td>
+			<td><? echo $property['Property']['mls']; ?></td>
+			<td><? echo str_replace( ' ', '&nbsp;', $property['Property']['address']); ?></td>
+			<? if( $additional1 ) { ?>
+	        	<td><? echo $property['Property']['project']; ?></td>
+	        	<td><? echo $property['Property']['style']; ?></td>
+	        	<td><? echo $property['Property']['descriptor']; ?></td>
+			<td><? echo $property['Property']['development'] ? 'yes' : 'no'; ?></td>
+			<? } ?>
+	        	<td><? echo $property['PropertyCategory']['name']; ?></td>
+			<td><? echo str_replace( ' ', '&nbsp;', $property['Property']['neighborhood']); ?></td>
+			<td align='right'><? echo $property['Property']['price'] ? '$'.number_format( $property['Property']['price'] ) : ''; ?></td>
+	        	<td><? echo $property['PropertyStatus']['name']; ?></td>
+			<td><? echo date( 'd\&\n\b\s\p\;M\&\n\b\s\p\;Y', strtotime( $property['Property']['date_added'] )); ?></td>
+			<td><? echo $property['Property']['date_sold'] ? date( 'd\&\n\b\s\p\;M\&\n\b\s\p\;Y', strtotime( $property['Property']['date_sold'] )) : ''; ?></td>
+			<td><? echo $property['Property']['rep_seller'] ? 'yes' : 'no'; ?></td>
+			<td><? echo $property['Property']['rep_buyer'] ? 'yes' : 'no'; ?></td>
+			<? if( $additional1 ) { ?>
+			<td><? echo str_replace( ' ', '&nbsp;', $property['Property']['bed']); ?></td>
+			<td><? echo str_replace( ' ', '&nbsp;', $property['Property']['bath']); ?></td>
+			<td>
+<?
+			if( count( $property['PropertyFlooring'] )) {
+			  foreach( $property['PropertyFlooring'] as $flooring ) {
+			    echo str_replace( ' ', '&nbsp;', $flooring['name'] ).'<br />';
+			  }
+			}
+?>
+			</td>
+	        	<td><? echo $property['Property']['fireplace']; ?></td>
+	        	<td><? echo $property['Property']['heating']; ?></td>
+			<td align="right"><? echo $property['Property']['sqft'] ? number_format( $property['Property']['sqft'] ).($property['Property']['per_kcar'] ? '&nbsp;per&nbsp;KCAR' : '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;') : ''; ?></td>
+			<td align='right'><? echo $property['Property']['lotsize'] ? number_format( $property['Property']['lotsize'] ) : ''; ?></td>
+			<td><? echo str_replace( ' ', '&nbsp;', $property['Property']['parking']); ?></td>
+			<td align='right'><? echo $property['Property']['taxes'] ? '$'.number_format( $property['Property']['taxes'] ) : ''; ?></td>
+			<td align='right'><? echo $property['Property']['hodues'] ? '$'.number_format( $property['Property']['hodues'] ) : ''; ?></td>
+	        	<td><? echo $property['Property']['yrbuilt']; ?></td>
+			<? } ?>
+			<td><a href="/properties/admin/properties/add/<? echo $property['Property']['id']; ?>">edit</a>&nbsp;|&nbsp;<? echo !$property['imageNum'] ? '<a href="/properties/admin/properties/imageAdd/'.$property['Property']['id'].'">add&nbsp;image</a>' : '<a href="/properties/admin/properties/imageListing/'.$property['Property']['id'].'">image&nbsp;management</a>'; ?></td>
+		</tr>
+	<? } ?>
+	</table>
+
+	<? echo $this->renderElement( 'pagenav', array( 'targetPrefix' => '/properties/admin/properties/listing/',
+							'formSubmit' => false, 
+							'curBatch' => $curBatch, 
+							'numBatches' => $numBatches,
+							'sortOrder' => $sortOrder,
+							'sortField' => $sortBy,
+							'additional1' => $additional1,
+							'batchPrefix' => 'Listing', 
+							'batchPostfix' => $additional1 ? 'in expanded view (old site)' : 'in summary view' )); ?>

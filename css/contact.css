@@ -1,0 +1,125 @@
+
+/* Contact CSS */
+form fieldset {
+		width:400px; /* safari fix*/
+		border: none;
+}
+
+form fieldset legend {
+display:none}
+
+form label {
+		display: block;
+		float: left;
+		width: 100px;
+		padding: 0;
+		margin: 2px 10px 0 0;
+		font-size:.8em
+}
+
+form input {
+		float: left;
+		width: 100px;
+		width: 220px;
+		border:1px solid #000;
+		margin-top:3px
+}
+form input:focus {
+	background:#f96;}
+form input:hover {
+	background:#ffc;}
+
+form textarea {
+		float:right;
+		width:290px;
+		height:70px;
+		font-family:Verdana, Arial, Helvetica, sans-serif;
+		font-size:.8em;
+		border:1px solid #000;
+}
+form textarea:focus {
+	background:#f96;} 
+form textarea:hover {
+	background:#ffc;}
+
+form br {
+		clear:both
+}
+
+form .inputSubmit {
+		width:90px;
+		float:left;
+		clear:both;
+		margin-right:12px;
+		border: 1px solid #000;
+		text-decoration: none;
+		background: #f60;
+		color: #fff;
+		cursor:pointer
+}
+form .inputSubmit:hover {
+		border: 1px solid #000;
+		background: #fff;
+		color: #f60;
+}
+
+form .formHelpSection {
+		width:180px;
+}
+
+form .formMessageSection {
+		width:290px;
+}
+
+/*#contactContent
+		{}
+#contactContent h1
+		{position:absolute;
+		margin-top:0;
+		margin-left:0;
+		display:block;
+		width:340px;
+		text-align:right}
+#contactContent #contactAddress
+		{position:absolute;
+		margin-top:260px;
+		margin-left:140px;
+		display:block;
+		width:200px;
+		text-align:right;
+		}*/
+/*form*/
+#contactForm {
+		float:right
+}
+
+#mainContent #returnMessage {
+		margin-left:370px
+}
+
+#mainContent #returnMessage p {
+		font-weight:bold;
+		font-size:12px;
+		margin-right:50px
+}
+
+#mainContent #returnMessage h2 {
+		color:#f90;
+		margin-top:20px
+}
+
+.required {
+		color:#c00;
+		font-size:11px
+}
+
+
+/*form .labelCheckbox 
+		{
+		display: block;
+		width:80px;
+		padding: 0px;
+		margin: 0 0 0 140px;
+		text-align:left;
+		}
+*/

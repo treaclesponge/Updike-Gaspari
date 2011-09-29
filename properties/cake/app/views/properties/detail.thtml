@@ -1,0 +1,176 @@
+<? echo $this->renderElement( 'topbar_contact' ); ?>
+<div id="imageHolder">
+		<!--Positioning of Thumbnails -->
+<?
+		foreach( $property['imageNums'] as $imageNum ) {
+
+			if( $imageNum > 0 ) {
+?>
+				<a href="/images/newProperties/main/<? echo $property['Property']['id']; ?>/propID<? echo $property['Property']['id']; ?>-<? echo str_pad( $imageNum, 2, 0, STR_PAD_LEFT ); ?>.jpg" rel="lightbox [ID<? echo $property['Property']['id']; ?>]" title="<? echo $property['Property']['caption'.$imageNum]; ?>" ><img src="/images/newProperties/thumb/<? echo $property['Property']['id']; ?>/propID<? echo $property['Property']['id']; ?>-<? echo str_pad( $imageNum, 2, 0, STR_PAD_LEFT ); ?>.jpg" title="click for larger image<? echo $property['Property']['caption'.$imageNum] ? ': '.$property['Property']['caption'.$imageNum] : ''; ?>" <? echo $property['Property']['caption'.$imageNum] ? 'alt="'.$property['Property']['caption'.$imageNum].'"' : ""; ?> class="thumb" /></a>
+<?
+			}else{
+?>
+				<img src="/images/squareBlue.gif" alt="lee" class="thumb">
+<?
+			}
+		}
+?>
+	</div>
+	<!-- end of image holder-->
+<!-- property specifications-->
+<section id="mainContent">
+	<h2><? echo $property['Property']['neighborhood']; ?></h2>
+	<p class="price"><? echo $property['Property']['price'] ? '$'.number_format( $property['Property']['price'] ) : ''; ?></p>
+
+	
+	
+		<? if( $property['Property']['project'] ) { ?>
+			<p class="titleStyle"><!--Style:--><? echo $property['Property']['project']; ?></p>
+		<? } ?>
+		<? if( $property['Property']['style'] ) { ?>
+			<p class="titleStyle"><!--Style:--><? echo $property['Property']['style']; ?></p>
+		<? } ?><div id="propertyDetails">
+
+	
+	
+		<div id="testimonialHolderTop"></div>
+			<div id="testimonialContent">
+				<table id="tableData">
+				<thead>
+				<tr>
+					<th colspan="2">At a glance&hellip;</th>
+				</tr>
+				</thead>
+
+				<tbody>
+
+				<? if( $property['Property']['bed'] ) { ?>
+				<tr>
+					<th>Bedrooms:</th>
+					<td><? echo str_replace( ' ', '&nbsp;', $property['Property']['bed']); ?></td>
+				</tr>
+				<? } ?>
+				<? if( $property['Property']['bath'] ) { ?>
+				<tr>
+					<th>Bathrooms:</th>
+					<td><? echo str_replace( ' ', '&nbsp;', $property['Property']['bath']); ?></td>
+				</tr>
+				<? } ?>
+				<? if( count( $property['PropertyFlooring'] )) { ?>
+				<tr>
+					<th>Flooring:</th>
+					<td>
+<?
+					$flooringStr = '';
+					if( count( $property['PropertyFlooring'] )) {
+					  foreach( $property['PropertyFlooring'] as $flooring ) {
+					    $flooringStr .= str_replace( ' ', '&nbsp;', $flooring['name'] ).', ';
+					  }
+					}
+					echo substr( $flooringStr, '', -2 );
+?>
+					<td>
+				</tr>
+				<? } ?>
+				<? if( $property['Property']['heating'] ) { ?>
+				<tr>
+					<th>Heating:</th>
+					<td><? echo $property['Property']['heating']; ?></td>
+				</tr>
+				<? } ?>
+				<? if( $property['Property']['fireplaces'] ) { ?>
+				<tr>
+					<th>Fireplaces:</th>
+					<td><? echo $property['Property']['fireplace']; ?></td>
+				</tr>
+				<? } ?>
+				<? if( $property['Property']['hodues'] ) { ?>
+				<tr>
+					<th>HO Dues:</th>
+					<td><? echo $property['Property']['hodues'] ? '$'.number_format( $property['Property']['hodues'] ) : ''; ?></td>
+				</tr>
+				<? } ?>
+				<? if( $property['Property']['sqft'] ) { ?>
+				<tr>
+					<th>Sq. Feet:</th>
+					<td><? echo $property['Property']['sqft'] ? number_format( $property['Property']['sqft'] ).($property['Property']['per_kcar'] ? '&nbsp;per&nbsp;KCAR' : '') : ''; ?></td>
+				</tr>
+				<? } ?>
+				<? if( $property['Property']['lotsize'] ) { ?>
+				<tr>
+					<th>Lot Size:</th>
+					<td><? echo $property['Property']['lotsize'] ? number_format( $property['Property']['lotsize'] ) : ''; ?></td>
+				</tr>
+				<? } ?>
+				<? if( $property['Property']['parking'] ) { ?>
+				<tr>
+					<th>Parking:</th>
+					<td><? echo $property['Property']['parking']; ?></td>
+				</tr>
+				<? } ?>
+				<? if( $property['Property']['taxes'] ) { ?>
+				<tr>
+					<th>Taxes:</th>
+					<td><? echo $property['Property']['taxes'] ? '$'.number_format( $property['Property']['taxes'] ) : ''; ?></td>
+				</tr>
+				<? } ?>
+				<? if( $property['Property']['yrbuilt'] ) { ?>
+				<tr>
+					<th>Year Built: </th>
+					<td><? echo $property['Property']['yrbuilt']; ?></td>
+				</tr>
+				<? } ?>
+				<? if( $property['Property']['other_label_1'] && $property['Property']['other_value_1'] ) { ?>
+				<tr>
+					<th><? echo $property['Property']['other_label_1']; ?>: </th>
+					<td><? echo $property['Property']['other_value_1']; ?></td>
+				</tr>
+				<? } ?>
+
+				</tbody>
+				</table>
+		        </div>
+			<div id="testimonialHolderBottom"></div>
+		</div>
+		<!-- /testimonialHolder -->
+
+		<div id="specsDetail">
+			<h3><? echo $property['Property']['descriptor']; ?></h3>
+			<? echo nl2br( $property['Property']['text'] ); ?>
+		</div>
+		<!-- end of specsDetail -->
+
+		<p class="backButton"><a href="javascript:history.back(2)"> &laquo; back to property list</a></p>
+	</div>	
+	<!-- end of propertyDetails -->
+
+</section>
+<!-- end of mainContent -->
+
+<div id="subNavigationHolder">
+
+	<div id="subNavigation">
+
+		<? if( $property['PropertyStatus']['name'] == 'sold' ) { ?>
+
+			<ul>
+				<li class="subnav_title">properties we&#146;ve sold: </li>
+
+				<? foreach( $propertyCategories as  $propertyCategory ) { ?>
+					<? $propertyCategory = $propertyCategory['PropertyCategory']; ?>
+					<li><a <? echo ($propertyCategory['title'] == $property['PropertyCategory']['title']) ? 'class="down"' : ''; ?> href="<? echo $targetPrefix; ?>1/asc/date_added/<? echo $propertyCategory['name']; ?>">[ <? echo $propertyCategory['title']; ?> ]</a></li>
+				<? } ?>
+
+			</ul>
+
+		<? } ?>
+
+	</div>
+	<!-- /subNavigation -->
+
+</div>
+<!-- /subNavigationHolder -->
+
+
+</div>
+<? echo $this->renderElement( 'bottomnav' ); ?>

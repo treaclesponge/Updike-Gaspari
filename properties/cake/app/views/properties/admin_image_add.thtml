@@ -1,0 +1,48 @@
+	<? $editing = isset( $this->data['Property']['imageNum'] ) && $this->data['Property']['imageNum']; ?>
+
+	<? if( $property['imageNum'] ) { ?>
+	<p class="adminButton"><a href="/properties/admin/properties/imageListing/<? echo $property['Property']['id']; ?>">back to Manage Images for this property</a></p>
+	<? } ?>
+
+	<h3><? echo $editing ? 'Edit image at property:' : 'Add new image to property:'; ?> </h3>
+	<p>ID: <? echo $property['Property']['id']; ?><br />
+	<? if( $property['Property']['mls'] ) { ?>
+		MLS: <? echo $property['Property']['mls']; ?><br />
+	<? } ?>
+	Address: <? echo $property['Property']['address']; ?></p>
+
+	<? if( isset( $errorMessage )) { ?>
+		<p><strong><? echo $errorMessage; ?></strong></p>
+	<? } ?>
+	<? if( isset( $message )) { ?>
+		<p><strong><? echo $message; ?></strong></p>
+	<? } ?>
+
+	<p>All fields marked <span class="required">*</span> are required</p>
+	<form method="POST" enctype='multipart/form-data' name="form1" id="form1">
+	<table id="editTable">
+
+		<tr>
+		<td align="right" valign="top"><label for="PropertyCaption">Caption :</label></td>
+		<td><? echo $html->input( 'Property/caption', array( 'size'=>'50', 'maxlength'=>'255', 'tabindex'=>'1' )); ?></td>
+		</tr>
+
+		<tr>
+		<td align="right" valign="top"><label for="PropertyFilename">File upload <? echo !$editing ? '<span class="required">*</span>' : ''; ?>:</label></td>
+		<td><? echo $html->file( 'Property/filename', array( 'size'=>'50', 'maxlength'=>'100', 'tabindex'=>'2' )); ?><? echo $html->tagErrorMsg( 'Property/filename', 'An image file is required.' ); ?><? echo $editing ? '<br />To replace the current image use the browse button to select a file from your computer and upload a new one.' : ''; ?></td>
+		</tr>
+
+		<? if( $editing ) { ?>
+			<tr>
+			<td align="right">Current image:</td>
+			<td><img src="/images/newProperties/thumb/<? echo $this->data['Property']['id']; ?>/propID<? echo $this->data['Property']['id']; ?>-<? echo str_pad( $this->data['Property']['imageNum'], 2, 0, STR_PAD_LEFT ); ?>.jpg" width="100" /></a></td>
+			</tr>
+		<? } ?>
+
+	        <? echo $html->hiddenTag( 'Property/id' ); ?>
+	        <? echo $html->hiddenTag( 'Property/imageNum' ); ?>
+	        <? echo $html->hiddenTag( 'Property/newImageNum' ); ?>
+
+	</table>
+	<div><input name="data[Form][save]" type="submit" value="save" /></div>
+	</form>

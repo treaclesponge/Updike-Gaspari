@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title><? echo $title_for_layout; ?></title>
+<style type="text/css" media="screen">
+@import url( /css/global.css );
+@import url( /css/admin.css );
+@import url( /css/calendar.css );
+</style>
+<script type="text/javascript" src="/css/property.js"></script>
+<script type="text/javascript" src="/scripts/calendar_db.js"></script>
+</head>
+
+<body id="<? echo $body_id_for_layout; ?>pageIDadmin" onload="<? echo $body_onload_for_layout; ?>" class="<? echo $body_class_for_layout; ?>">
+<div id="mainContent">
+  <img src="/images/logo.gif" alt="logo" class="logo" /> 
+  <hr />
+<? echo $this->renderElement( 'admin_nav', array( 'firstname' => $firstname )); ?>
+  <? echo $content_for_layout ?>
+</div>
+</body>
+</html>

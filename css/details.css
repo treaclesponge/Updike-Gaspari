@@ -1,0 +1,157 @@
+
+#pageIDproperties #mainContent {
+	height:340px;
+	min-height:340px;
+	width:400px;
+	padding-left:0;
+	padding-right:0;
+	float:left
+}
+
+#pageIDproperties #mainContent h1 {
+	display:block;
+	float:left;
+	font-size:1.1em;
+	margin:0 0 0 10px;
+	text-transform:uppercase;
+	width:200px;
+}
+
+#pageIDproperties #mainContent h3.price {
+	display:block;
+	color:#f60;
+	text-align:right
+}
+
+/*======================================================================================================*/
+/*propertyDetails*/
+/*======================================================================================================*/
+#pageIDproperties #mainContent #propertyDetails {
+	float:left;
+	width:210px;
+	margin:0 0 0 4px;
+}
+
+#pageIDproperties #mainContent #propertyDetails:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+/*======================================================================================================*/
+/*specsDetail */
+/*======================================================================================================*/
+#pageIDproperties #mainContent #specsDetail {
+	float:left;
+	width:180px;
+	display:block;
+	font-size:.75em;
+	margin-top:6px
+}
+
+#pageIDproperties #mainContent #specsDetail h3 {
+	font-weight:bold;
+	font-size:1.2em;
+	margin-top:0px;
+}
+
+#pageIDproperties #mainContent #specsDetail p {
+}
+
+#pageIDproperties #mainContent p.titleStyle {
+	clear:left;
+	display:block;
+	margin:3px 0 3px 10px;
+}
+
+/*======================================================================================================*/
+/*table of data*/
+/*======================================================================================================*/
+#pageIDproperties #mainContent #propertyDetails #testimonialHolder {
+	float:left;
+	margin:0;
+	margin-left:-6px;
+	clear:left;
+}
+
+#pageIDproperties #mainContent #propertyDetails table#tableData {
+	width:180px;
+	display:block;
+	vertical-align:top;
+	border-collapse:collapse;
+	font-size:.75em;
+	padding:5px;
+}
+
+#pageIDproperties #mainContent #propertyDetails table#tableData th h3 {
+	margin:0;
+	padding:0;
+	font-size:1.9em
+}
+
+#pageIDproperties #mainContent #propertyDetails table#tableData th h3 {
+	width:90px;
+}
+
+#pageIDproperties #mainContent #propertyDetails table#tableData td,
+#pageIDproperties #mainContent #propertyDetails table#tableData th {
+	vertical-align:top;
+	text-align:left;
+	padding:2px 0 0 12px;
+}
+
+#pageIDproperties #mainContent #propertyDetails table#tableData th {
+	text-align:left;
+}
+
+#pageIDproperties #mainContent #propertyDetails table#tableData thead th {
+	color:#f60;
+	font-size:1.3em
+}
+
+#pageIDproperties #mainContent #propertyDetails table#tableData tr {
+}
+
+/*======================================================================================================*/
+/*backButton */
+/*======================================================================================================*/
+
+p.backButton /*back button*/ {
+	font-size:1em;
+	padding:30px 0 1em 20px;
+}
+
+/*======================================================================================================*/
+/*imageHolder*/
+/*======================================================================================================*/
+
+#imageHolder {
+	width:368px;
+	margin:0;
+	float:right;
+	margin:0 -8px 0 0;
+}
+
+#imageHolder img.thumb {
+	float:left;
+	width:90px;
+	height:89px;
+	border-bottom:1px solid #fff;
+	border-top:1px solid #fff;
+	border-left:2px solid #fff;
+}
+
+#imageHolder a img.thumb {
+	background:#fff;
+	filter:alpha(opacity=100);
+	-moz-opacity:1;
+	opacity:1;
+}
+
+#imageHolder a img.thumb:hover {
+	filter:alpha(opacity=80);
+	-moz-opacity:0.8;
+	opacity:0.8;
+}
